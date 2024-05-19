@@ -3,11 +3,11 @@ from sqlalchemy import Table, MetaData, Column, Integer, String
 from sqlalchemy.orm import mapper
 import requests
 import sys
+import os
 
 app = Flask(__name__)
 
-weather_api_key = '9822710e5a3bd29f46282a54f3f8d2b7'
-
+weather_api_key = os.environ['OPEN_WEATHER_API_KEY']
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
