@@ -6,7 +6,7 @@ import sys
 
 app = Flask(__name__)
 
-weather_api_key = '9822710e5a3bd29f46282a54f3f8d2b7'
+weather_api_key =
 
 
 @app.route('/', methods=['GET', 'POST'])
