@@ -27,12 +27,15 @@ def log_in():
     return 'This is login page'
 
 
+weather_list = []
 @app.route('/add/<city>', methods=['GET', 'POST'])
 def add_city(city):
     if request.method == "GET":
         #city_name = request.form['city_name']
         weather_data = get_weather_data(city)
-        return render_template('index.html', weather=[weather_data])
+        if weather_data:
+            weather_list.append(weather_data)
+        return render_template('index.html', weather=weather_list)
 
 
 def get_weather_data(city_name):
